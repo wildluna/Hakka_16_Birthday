@@ -8,26 +8,18 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script type="text/javascript">
-		var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL.json", {onProgress: UnityProgress});
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body onResize="Resize()">
+  <body>
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 100%; height: 100%"></div>
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="document.makeFullscreen('unityContainer')"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">GraduationOnline</div>
       </div>
     </div>
-	<script type="text/javascript">
-		function Resize() {
-				document.getElementById("unityContainer").style.width = window.innerWidth + "px";
-				document.getElementById("unityContainer").style.height = window.innerHeight + "px";
-				document.getElementById("#canvas").style.width = window.innerWidth + "px";
-				document.getElementById("#canvas").style.height = window.innerHeight + "px";
-		}	
-    </script>
   </body>
 </html>
